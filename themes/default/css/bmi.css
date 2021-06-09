@@ -1,0 +1,161 @@
+/**
+ * @Project NUKEVIET 4.x
+ * @Author VINADES.,JSC (contact@vinades.vn)
+ * @Copyright (C) 2014 VINADES.,JSC. All rights reserved
+ * @License GNU/GPL version 2 or any later version
+ * @Createdate Tue, 08 Apr 2014 15:13:43 GMT
+ */
+
+.show_result_bmi{
+    padding: 10px;
+    border: 2px dotted #1f7fb7;
+    margin-top: 10px;
+}
+.bmi-box{
+    max-width: 550px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+}
+.bodytext{
+    margin-top: 20px;
+}
+.show_result_bmi h4, .show_result_bmi h5{
+    margin-top: 6px;
+}
+.bmi_suggest{
+    margin-top: 20px;
+}
+.bmi_suggest .head1{
+    font-weight: 700;
+    color: #4189c6;
+    text-align: center;
+}
+
+
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #9a9a9a;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.container-timeline {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* The circles on the timeline */
+.container-timeline::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -12px;
+    background-color: #ffbd29;
+    border: 4px solid #9a9a9a;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+.timeline .left {
+    left: 0;
+}
+
+/* Place the container to the right */
+.timeline .right {
+    left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.timeline .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 9px;
+    width: 0;
+    z-index: 1;
+    right: 18px;
+    border: medium solid #1f7fb7;
+    border-width: 20px 0 20px 20px;
+    border-color: transparent transparent transparent #0a6fd2;
+}
+
+/* Add arrows to the right container (pointing left) */
+.timeline .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 9px;
+    width: 0;
+    z-index: 1;
+    left: 18px;
+    border: medium solid #1f7fb7;
+    border-width: 20px 20px 20px 0;
+    border-color: transparent #0a6fd2 transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.timeline .right::after {
+    left: -12px;
+}
+
+/* The actual content */
+.timeline .content {
+    padding: 10px;
+    background-color: white;
+    border: 3px dotted #d4d4d4;
+    position: relative;
+    border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .timeline::after {
+        left: 31px;
+    }
+
+    /* Full-width containers */
+    .timeline .container-timeline {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .timeline .container-timeline::before {
+        left: 60px;
+        border: medium solid #1f7fb7;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #0a6fd2 transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .timeline .left::after, .timeline .right::after {
+        left: 15px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .timeline .right {
+        left: 0%;
+    }
+}
